@@ -1,10 +1,9 @@
 const database = require('../data/dbConfig');
 
 function validateAccountID(id) {
-    return (req, res, next) => {
         return database.first('*').from('accounts').where('id', id)
     }
-}
+
 
 function validateAccount(payload) {
     return (req, res, next) => {
